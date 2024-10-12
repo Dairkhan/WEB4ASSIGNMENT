@@ -18,14 +18,14 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
 const taskInput = document.getElementById('task-input');
 const taskList = document.getElementById('task-list');
 
-// Add Task Function
+
 document.getElementById('add-task').addEventListener('click', function() {
   const task = taskInput.value;
   if (task) {
     const li = document.createElement('li');
     li.textContent = task;
 
-    // Add delete button for each task
+    
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
     deleteBtn.addEventListener('click', function() {
@@ -34,7 +34,7 @@ document.getElementById('add-task').addEventListener('click', function() {
 
     li.appendChild(deleteBtn);
     taskList.appendChild(li);
-    taskInput.value = ''; // Clear input field after adding task
+    taskInput.value = ''; 
   } else {
     alert('Please enter a task');
   }
@@ -77,7 +77,7 @@ document.getElementById('add-task').addEventListener('click', function() {
   setInterval(updateDateTime, 1000);
   
   // Random Number Guessing Game
-let randomNumber = Math.floor(Math.random() * 100) + 1; // Generates a random number between 1 and 100
+let randomNumber = Math.floor(Math.random() * 100) + 1; 
 let attempts = 0;
 
 document.getElementById('submit-guess').addEventListener('click', function() {
@@ -94,17 +94,17 @@ document.getElementById('submit-guess').addEventListener('click', function() {
     feedback.textContent = 'Too low! Try again.';
   } else {
     feedback.textContent = `Congratulations! You guessed the correct number (${randomNumber})!`;
-    feedback.style.color = 'green'; // Changing the text color for success
-    resetGame(); // Reset the game after a correct guess
+    feedback.style.color = 'green'; 
+    resetGame(); 
   }
 
   attemptCount.textContent = `Attempts: ${attempts}`;
 });
 
 function resetGame() {
-  randomNumber = Math.floor(Math.random() * 100) + 1; // Reset the random number
-  attempts = 0; // Reset the attempt counter
-  document.getElementById('guess-input').value = ''; // Clear the input field
-  document.getElementById('guess-feedback').textContent = ''; // Clear the feedback message
-  document.getElementById('attempts').textContent = ''; // Clear the attempts display
+  randomNumber = Math.floor(Math.random() * 100) + 1; 
+  attempts = 0; 
+  document.getElementById('guess-input').value = ''; 
+  document.getElementById('guess-feedback').textContent = ''; 
+  document.getElementById('attempts').textContent = ''; 
 }
